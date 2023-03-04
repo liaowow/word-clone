@@ -11,10 +11,22 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
+  const [guess, setGuess] = React.useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.info({ guess });
+    setGuess('');
+  }
+
   return (
     <>
       <GuessResults />
-      <GuessInput />
+      <GuessInput 
+        guess={guess}
+        setGuess={setGuess}
+        handleSubmit={handleSubmit}
+      />
     </>
   );
 }
