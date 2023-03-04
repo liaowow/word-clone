@@ -17,6 +17,8 @@ function GuessInput() {
         type="text"
         value={guess}
         onChange={event => setGuess((event.target.value).toUpperCase())}
+        pattern="[a-zA-Z]{5}"
+        title="5 letter word"
       />
     </form>
   );
