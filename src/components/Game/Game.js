@@ -2,6 +2,7 @@ import React from 'react';
 
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
+import Guess from '../Guess';
 import GuessInput from '../GuessInput';
 import GuessResults from '../GuessResults';
 
@@ -23,6 +24,7 @@ function Game() {
 
   return (
     <>
+      <Guess />
       <GuessResults guessList={guessList} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} />
     </>
