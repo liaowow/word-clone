@@ -17,9 +17,7 @@ function Game() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.info({ guess });
-    const newList = [...guessList];
-    newList.push(guess);
-    setGuessList(newList);
+    setGuessList([...guessList, guess]);
     setGuess('');
   }
 
