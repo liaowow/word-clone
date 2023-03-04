@@ -6,7 +6,6 @@ function Guess({ word }) {
     <div className="guess">
       {range(5).map((num) => (
         <span key={num} className="cell">
-          {console.info({word})}
           {word ? word.value[num] : undefined}
         </span>
       ))}
