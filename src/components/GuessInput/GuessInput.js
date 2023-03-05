@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ handleSubmitGuess }) {
+function GuessInput({ handleSubmitGuess, gameStatus }) {
   const [guess, setGuess] = React.useState('');
 
   const handleSubmit = (event) => {
@@ -19,6 +19,7 @@ function GuessInput({ handleSubmitGuess }) {
         onChange={event => setGuess((event.target.value).toUpperCase())}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
+        disabled={gameStatus !== 'pending'}
       />
     </form>
   );

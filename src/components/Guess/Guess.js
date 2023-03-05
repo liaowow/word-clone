@@ -1,9 +1,8 @@
 import React from "react";
 import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
-import Banner from "../Banner/Banner";
 
-function Guess({ word, answer, numOfGuesses }) {
+function Guess({ word, answer }) {
   const wordToCheck = word?.value;
   const GuessResults = checkGuess(wordToCheck, answer);
 
@@ -19,11 +18,6 @@ function Guess({ word, answer, numOfGuesses }) {
           </span>
         ))}
       </div>
-      <Banner 
-        GuessResults={GuessResults}
-        numOfGuesses={numOfGuesses}
-        answer={answer}
-      />
     </>
   );
 }
