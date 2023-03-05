@@ -1,7 +1,15 @@
 import React from "react";
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
-function Banner({ GuessResults, numOfGuesses }) {
+function Banner({ GuessResults, numOfGuesses, answer }) {
   const winningList = GuessResults?.filter(result => result.status === 'correct');
+  if (numOfGuesses === NUM_OF_GUESSES_ALLOWED) {
+    return (
+      <div className="sad banner">
+        <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
+      </div>
+    )
+  }
   if (winningList?.length === 5) {
     return (
       <div className="happy banner">

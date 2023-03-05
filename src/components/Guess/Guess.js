@@ -22,6 +22,7 @@ function Guess({ word, answer, numOfGuesses }) {
       <Banner 
         GuessResults={GuessResults}
         numOfGuesses={numOfGuesses}
+        answer={answer}
       />
     </>
   );
