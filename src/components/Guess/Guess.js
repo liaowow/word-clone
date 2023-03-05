@@ -3,7 +3,7 @@ import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
 import Banner from "../Banner/Banner";
 
-function Guess({ word, answer }) {
+function Guess({ word, answer, numOfGuesses }) {
   const wordToCheck = word?.value;
   const GuessResults = checkGuess(wordToCheck, answer);
 
@@ -19,7 +19,10 @@ function Guess({ word, answer }) {
           </span>
         ))}
       </div>
-      <Banner GuessResults={GuessResults} />
+      <Banner 
+        GuessResults={GuessResults}
+        numOfGuesses={numOfGuesses}
+      />
     </>
   );
 }

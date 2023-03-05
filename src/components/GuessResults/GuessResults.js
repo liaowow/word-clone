@@ -10,7 +10,8 @@ function GuessResults({ guessList, answer }) {
         <Guess 
           key={num} 
           word={guessList[num]} 
-          answer={answer} 
+          answer={answer}
+          numOfGuesses={guessList.length}
         />
       ))}
     </div>
