@@ -1,6 +1,17 @@
 import React from "react";
 
+const getStatusByLetter = (statusReport) => {
+  const statusObj = {};
+  statusReport.forEach(report => {
+    report.forEach(({ letter, status }) => {
+      statusObj[letter] = status;
+    });
+  });
+  return statusObj;
+}
+
 function Keyboard({ guessStatus }) {
+  let letterStatus = getStatusByLetter(guessStatus);
   const keyboardRows = [
     'QWERTYUIOP',
     'ASDFGHJKL',
@@ -8,19 +19,13 @@ function Keyboard({ guessStatus }) {
   ];
   return (
     <div className='keyboardContainer'>
-      {keyboardRows.map(row => (
-        <div className='keyboardRow'>
+      {keyboardRows.map((row, idx) => (
+        <div key={idx} className='keyboardRow'>
           {row.split('').map(letter => {
-            let updatedStatus = '';
-            for (const letterGroup of guessStatus) {
-              if (letterGroup.letter === letter) {
-                updatedStatus = letterGroup.status;
-              }
-            }
             return (
               <span
                 key={letter} 
-                className={`keyboardLetter ${updatedStatus}`}
+                className={`keyboardLetter ${letterStatus[letter] || ''}`}
               >
                 {letter}
               </span>

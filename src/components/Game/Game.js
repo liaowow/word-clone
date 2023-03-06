@@ -18,7 +18,6 @@ console.info({ answer });
 function Game() {
   const [gameStatus, setGameStatus] = React.useState('pending');
   const [guessList, setGuessList] = React.useState([]);
-  const [guessStatus, setGuessStatus] = React.useState([]);
 
   const handleSubmitGuess = (guess) => {
     const newGuess = {
@@ -28,15 +27,14 @@ function Game() {
     const newGuessList = [...guessList, newGuess];
     setGuessList(newGuessList);
 
-    const newStatus = checkGuess(guess, answer);
-    setGuessStatus(newStatus);
-
     if (guess.toUpperCase() === answer) {
       setGameStatus('won');
     } else if (newGuessList.length >= NUM_OF_GUESSES_ALLOWED) {
       setGameStatus('lost');
     }
   }
+
+  const guessStatus = guessList.map(guess => checkGuess(guess.value, answer));
 
   return (
     <>
