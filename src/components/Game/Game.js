@@ -6,6 +6,7 @@ import GuessInput from '../GuessInput';
 import GuessResults from '../GuessResults';
 import WonBanner from '../WonBanner/WonBanner';
 import LostBanner from '../LostBanner/LostBanner';
+import Keyboard from '../Keyboard/Keyboard';
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
 // Pick a random word on every pageload.
@@ -42,6 +43,7 @@ function Game() {
         gameStatus={gameStatus}
         handleSubmitGuess={handleSubmitGuess} 
       />
+      <Keyboard />
       {
         gameStatus === 'won' && 
           <WonBanner
