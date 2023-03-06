@@ -164,35 +164,36 @@ h1 {
 .keyboardContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: center;
+  gap: 4px;
 }
 
 .keyboardRow {
-  margin: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
 
 .keyboardLetter {
+  display: grid;
+  place-content: center;
   background-color: var(--color-gray-900);
+  width: 2rem;
+  height: 2rem;
   border-radius: 4px;
-  font-size: 2rem;
-  margin: 4px;
-  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .keyboardLetter.correct {
   background: var(--color-success);
-  border-color: var(--color-success);
   color: white;
 }
 .keyboardLetter.incorrect {
   background: var(--color-gray-300);
-  border-color: var(--color-gray-300);
   color: white;
 }
 .keyboardLetter.misplaced {
   background: var(--color-warning);
-  border-color: var(--color-warning);
   color: white;
 }
 
