@@ -11,7 +11,7 @@ function WonBanner({ numOfGuesses, handleRestart }) {
       <p>
         <strong>Congratulations!</strong> Got it in
         {' '}
-        <strong>{numOfGuesses} guess{numOfGuesses > 1 ? `es` : ``}</strong>.
+        <strong>{numOfGuesses} {numOfGuesses > 1 ? `guesses` : `guess`}</strong>.
       </p>
     </Banner>
   );
